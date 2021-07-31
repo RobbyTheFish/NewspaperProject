@@ -10,16 +10,27 @@
     <body>
         <header>
             <div class="container">
-                <div class="row justify-content-center">
-                    <nav>
-                        <a href="{% url 'home' %}"> News</a> | <a href={% if user.is_authenticated %}"{% url 'logout' %}">Log Out{% else %}"{% url 'login' %}">Log In </a> | <a href="{% url 'signup' %}">Sign Up{% endif %}</a>
-                    </nav>
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md-4 brand">
+                        <a href="{% url 'home'%}">Newspaper</a>
+                    </div>
+                    {% if user.is_authenticated %}
+                        <div class="col-md-4 authpanel">
+                        <a href="{% url 'logout' %}">Log Out</a>
+                    </div>
+                    {% else %}
+                    <div class="col-md-4 authpanel">
+                        <a href="{% url 'login' %}">Log In</a> | <a href="{% url 'signup' %}"> Sign Up</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </header>
         <main>
+            <div class="container">
             {% block content %}
             {% endblock content %}
+            </div>
         </main>
         <footer>
             <div class="container">

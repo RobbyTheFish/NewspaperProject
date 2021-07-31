@@ -2,18 +2,19 @@
 {% block title%} Log in {% endblock title%}
 
 {% block content %}
-<div class="container">
     <div class="row justify-content-center">
-        <h2>Log In</h2>
+        <div class="col">
+            <h2>Log In</h2>
+        </div>
+    </div>
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <form method="post" class="auth">
+        <div class="col auth">
+            <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit" id="subm">Log In</button>
             </form>
         </div>
     </div>
-</div>
 
 {% endblock content %}
