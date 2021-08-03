@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title%} Log in {% endblock title%}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col">
+            <h2>Log In</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col auth">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" id="subm">Log In</button>
+            </form>
+            <a href="{% url 'password_reset' %}" style="display: block; text-align: center; margin-top: 10px;"> Forgot your password?</a>
+        </div>
+    </div>
+
+{% endblock content %}
