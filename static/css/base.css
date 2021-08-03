@@ -47,9 +47,7 @@ header a{
     margin: 5px;
     padding: 5px;
 }
-.authpanel{
-    text-align: right;
-}
+
 header {
     background-color: rgb(0, 7, 36);
     padding: 10px;
@@ -61,9 +59,6 @@ header a:hover{
     border-radius: 3px;
     background-color: aliceblue;
     color: rgb(0, 7, 36);
-}
-.auth{
-    margin-right: 0px;
 }
 
 .auth input{
